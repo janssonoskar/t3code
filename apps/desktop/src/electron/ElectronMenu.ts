@@ -89,6 +89,9 @@ export const layer = Layer.sync(ElectronMenu, () => {
         width: 12,
         height: 12,
       });
+      // Template images are auto-tinted by macOS for light/dark mode and
+      // highlight state, matching the surrounding menu text.
+      icon.setTemplateImage(true);
       destructiveMenuIconCache = icon.isEmpty() ? Option.none() : Option.some(icon);
     } catch {
       destructiveMenuIconCache = Option.none();
